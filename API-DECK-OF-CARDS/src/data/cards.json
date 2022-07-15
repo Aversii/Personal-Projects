@@ -1,0 +1,316 @@
+[
+	{
+		"id": 1,
+		"nipe" : "clubs",
+		"name": "1C",
+		"value" : 1,
+		"cardImageUrl" : ""
+	},{
+		"id": 2,
+		"nipe" : "clubs",
+		"name": "2C",
+		"value" : 2,
+		"cardImageUrl" : ""
+	},{
+		"id": 3,
+		"nipe" : "clubs",
+		"name": "3C",
+		"value" : 3,
+		"cardImageUrl" : ""
+	},{
+		"id": 4,
+		"nipe" : "clubs",
+		"name": "4C",
+		"value" : 4,
+		"cardImageUrl" : ""
+	},{
+		"id": 5,
+		"nipe" : "clubs",
+		"name": "5C",
+		"value" : 5,
+		"cardImageUrl" : ""
+	},{
+		"id": 6,
+		"nipe" : "clubs",
+		"name": "6C",
+		"value" : 6,
+		"cardImageUrl" : ""
+	},{
+		"id": 7,
+		"nipe" : "clubs",
+		"name": "7C",
+		"value" : 7,
+		"cardImageUrl" : ""
+	},{
+		"id": 8,
+		"nipe" : "clubs",
+		"name": "8C",
+		"value" : 8,
+		"cardImageUrl" : ""
+	},{
+		"id": 9,
+		"nipe" : "clubs",
+		"name": "9C",
+		"value" : 9,
+		"cardImageUrl" : ""
+	},{
+		"id": 10,
+		"nipe" : "clubs",
+		"name": "10C",
+		"value" : 10,
+		"cardImageUrl" : ""
+	},{
+		"id": 11,
+		"nipe" : "clubs",
+		"name": "JC",
+		"value" : 10,
+		"cardImageUrl" : ""
+	},{
+		"id": 12,
+		"nipe" : "clubs",
+		"name": "QC",
+		"value" : 10,
+		"cardImageUrl" : ""
+	},{
+		"id": 13,
+		"nipe" : "clubs",
+		"name": "KC",
+		"value" : 10,
+		"cardImageUrl" : ""
+	},{
+		"id": 14,
+		"nipe" : "diamonds",
+		"name": "1D",
+		"value" : 1,
+		"cardImageUrl" : ""
+	},{
+		"id": 15,
+		"nipe" : "diamonds",
+		"name": "2D",
+		"value" : 2,
+		"cardImageUrl" : ""
+	},{
+		"id": 16,
+		"nipe" : "diamonds",
+		"name": "3D",
+		"value" : 3,
+		"cardImageUrl" : ""
+	},{
+		"id": 17,
+		"nipe" : "diamonds",
+		"name": "4D",
+		"value" : 4,
+		"cardImageUrl" : ""
+	},{
+		"id": 18,
+		"nipe" : "diamonds",
+		"name": "5D",
+		"value" : 5,
+		"cardImageUrl" : ""
+	},{
+		"id": 19,
+		"nipe" : "diamonds",
+		"name": "6D",
+		"value" : 6,
+		"cardImageUrl" : ""
+	},{
+		"id": 20,
+		"nipe" : "diamonds",
+		"name": "7D",
+		"value" : 7,
+		"cardImageUrl" : ""
+	},{
+		"id": 21,
+		"nipe" : "diamonds",
+		"name": "8D",
+		"value" : 8,
+		"cardImageUrl" : ""
+	},{
+		"id": 22,
+		"nipe" : "diamonds",
+		"name": "9D",
+		"value" : 9,
+		"cardImageUrl" : ""
+	},{
+		"id": 23,
+		"nipe" : "diamonds",
+		"name": "10D",
+		"value" : 10,
+		"cardImageUrl" : ""
+	},{
+		"id": 24,
+		"nipe" : "diamonds",
+		"name": "JD",
+		"value" : 10,
+		"cardImageUrl" : ""
+	},{
+		"id": 25,
+		"nipe" : "diamonds",
+		"name": "QD",
+		"value" : 10,
+		"cardImageUrl" : ""
+	},{
+		"id": 26,
+		"nipe" : "diamonds",
+		"name": "KD",
+		"value" : 10,
+		"cardImageUrl" : ""
+	},{
+		"id": 27,
+		"nipe" : "hearts",
+		"name": "H1",
+		"value" : 1,
+		"cardImageUrl" : ""
+	},{
+		"id": 28,
+		"nipe" : "hearts",
+		"name": "H2",
+		"value" : 2,
+		"cardImageUrl" : ""
+	},{
+		"id": 29,
+		"nipe" : "hearts",
+		"name": "H3",
+		"value" : 3,
+		"cardImageUrl" : ""
+	},{
+		"id": 30,
+		"nipe" : "hearts",
+		"name": "H4",
+		"value" : 4,
+		"cardImageUrl" : ""
+	},{
+		"id": 31,
+		"nipe" : "hearts",
+		"name": "H5",
+		"value" : 5,
+		"cardImageUrl" : ""
+	},{
+		"id": 32,
+		"nipe" : "hearts",
+		"name": "H6",
+		"value" : 6,
+		"cardImageUrl" : ""
+	},{
+		"id": 33,
+		"nipe" : "hearts",
+		"name": "H7",
+		"value" : 7,
+		"cardImageUrl" : ""
+	},{
+		"id": 34,
+		"nipe" : "hearts",
+		"name": "H8",
+		"value" : 8,
+		"cardImageUrl" : ""
+	},{
+		"id": 35,
+		"nipe" : "hearts",
+		"name": "H9",
+		"value" : 9,
+		"cardImageUrl" : ""
+	},{
+		"id": 36,
+		"nipe" : "hearts",
+		"name": "H10",
+		"value" : 10,
+		"cardImageUrl" : ""
+	},{
+		"id": 37,
+		"nipe" : "hearts",
+		"name": "JH",
+		"value" : 10,
+		"cardImageUrl" : ""
+	},{
+		"id": 38,
+		"nipe" : "hearts",
+		"name": "QH",
+		"value" : 10,
+		"cardImageUrl" : ""
+	},{
+		"id": 39,
+		"nipe" : "hearts",
+		"name": "KH",
+		"value" : 10,
+		"cardImageUrl" : ""
+	},{
+		"id": 40,
+		"nipe" : "spades",
+		"name": "S1",
+		"value" : 1,
+		"cardImageUrl" : ""
+	},{
+		"id": 41,
+		"nipe" : "spades",
+		"name": "S2",
+		"value" : 2,
+		"cardImageUrl" : ""
+	},{
+		"id": 42,
+		"nipe" : "spades",
+		"name": "S3",
+		"value" : 3,
+		"cardImageUrl" : ""
+	},{
+		"id": 43,
+		"nipe" : "spades",
+		"name": "S4",
+		"value" : 4,
+		"cardImageUrl" : ""
+	},{
+		"id": 44,
+		"nipe" : "spades",
+		"name": "S5",
+		"value" : 5,
+		"cardImageUrl" : ""
+	},{
+		"id": 45,
+		"nipe" : "spades",
+		"name": "S6",
+		"value" : 6,
+	"cardImageUrl" : ""
+	},{
+		"id": 46,
+		"nipe" : "spades",
+		"name": "S7",
+		"value" : 7,
+		"cardImageUrl" : ""
+	},{
+		"id": 47,
+		"nipe" : "spades",
+		"name": "S8",
+		"value" : 8,
+		"cardImageUrl" : ""
+	},{
+		"id": 48,
+		"nipe" : "spades",
+		"name": "S9",
+		"value" : 9,
+		"cardImageUrl" : ""
+	},{
+		"id": 49,
+		"nipe" : "spades",
+		"name": "S10",
+		"value" : 10,
+		"cardImageUrl" : ""
+	},{
+		"id": 50,
+		"nipe" : "spades",
+		"name": "JS",
+		"value" : 10,
+		"cardImageUrl" : ""
+	},{
+		"id": 51,
+		"nipe" : "spades",
+		"name": "QS",
+		"value" : 10,
+		"cardImageUrl" : ""
+	},{
+		"id": 52,
+		"nipe" : "spades",
+		"name": "KS",
+		"value" : 10,
+		"cardImageUrl" : ""
+	}	
+		
+	]
