@@ -7,8 +7,9 @@ const createTables = () => connection
    .raw(`
 
       CREATE TABLE IF NOT EXISTS Deck (
-         nipe VARCHAR(255),
-         id VARCHAR(3) PRIMARY KEY,
+         id INT PRIMARY KEY,
+         nipe VARCHAR(255)NOT NULL,
+         name VARCHAR(3)NOT NULL UNIQUE,
          value INT NOT NULL,
          cardImageUrl VARCHAR(255)         
       );
