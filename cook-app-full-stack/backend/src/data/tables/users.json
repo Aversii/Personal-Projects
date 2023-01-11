@@ -1,0 +1,24 @@
+[
+	{
+		"id" : "1",
+		"name" : "Lucas Aversi",
+		"email" : "laversi@email.com",
+		"password" : "2b$10$mPaqzfsfDx95h0hNmZNW6uVWVVuw2yVZy/jflsdyF9u4GGsn/Z.HS",
+		"role":"admin"
+	},
+	{
+		"id" : "2",
+		"name" : "João",
+		"email" : "joão@email.com",
+		"password" : "$2b$10$b3zNLKUHAZZ9fnglV99TfuXiaKWby4HIjrYSYJH/F0yCHgP1ilEzG",
+		"role":"normal"
+
+	},
+	{
+		"id" : "3",
+		"name" : "carlos",
+		"email" : "carlos@email.com",
+		"password" : "$2b$10$YGkzmwN.bvwTCyw95WJLx.cBmr2Vgug/rIZGRoL5f7dUwkvc.P.KK",
+		"role":"admin"
+	}
+]
