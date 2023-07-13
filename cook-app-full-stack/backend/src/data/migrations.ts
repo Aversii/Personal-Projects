@@ -1,8 +1,8 @@
 import connection from "./connection";
-import users from "./tables/users.json"
-import recipes from "./tables/recipes.json"
-import likes from "./tables/likes.json"
-import follows from "./tables/follows.json"
+import users from "./tablesPopulation/users.json"
+import recipes from "./tablesPopulation/recipes.json"
+import likes from "./tablesPopulation/likes.json"
+import follows from "./tablesPopulation/follows.json"
 
 
 const printError = (error: any) => { console.log(error.sqlMessage || error.message) };
