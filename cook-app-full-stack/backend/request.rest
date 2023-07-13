@@ -1,0 +1,38 @@
+//_________________________________________ USER ENDPOINTS ______________________________________//
+
+//1 - Signup
+//Its possible define users roles if wanted => "role":"admin". This information is optional and if none value was give by body, user will assume "normal" as role.
+
+POST http://localhost:3003/users/signup
+Content-Type: application/json
+
+{
+   "name": "aversiii", 
+   "email": "aversiiigmail.com",
+   "password": "123456"
+   
+}
+
+###
+
+// 2 - Login
+
+POST http://localhost:3003/users/login
+Content-Type: application/json
+
+{
+   "email": "aversiii@gmail.com", 
+   "password": "123456"
+}
+
+###
+
+// 3 Get all users - requires admin authorization
+
+GET http://localhost:3003/users/getAll
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdjOWEyOGU4LTVhNzYtNDJmYS1iNTFmLTE2OWVjZmUzODFjMCIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY4OTIyODA0MiwiZXhwIjoxNjg5MjM4ODQyfQ.VqtXTlGN3toxp_JfM-WEKYpjpJgcU1v47IL1rrolEXg
+###
+
+
+

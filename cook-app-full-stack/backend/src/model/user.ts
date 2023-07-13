@@ -62,3 +62,8 @@ export type TUser  = {
   password: string,
   role?:string
 }
+
+export interface LoginUserInputDTO {
+  email: string,
+  password: string
+}
