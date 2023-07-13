@@ -55,4 +55,10 @@ export interface userInputDTO {
   role?:string
 }
 
-
+export type TUser  = {
+  id: string,
+  name: string,
+  email: string,
+  password: string,
+  role?:string
+}
