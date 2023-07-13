@@ -1,0 +1,38 @@
+[
+	{
+		"id" : "1",
+		"title" : "Sopa de Legumes",
+		"photo" : "foto da sopa de legumes",
+        "description": "Sopa feita com legumes, carnes e macarrão",
+        "cook_time": "30 min",
+        "servings":"4 dishes",
+        "ingredients": "Legumes, Carnes, Macarrão e água",
+        "instructions": "ypsum lorem ................moriones",
+        "created_at": "1995/02/22",
+        "author_id":"1"
+	},
+	{
+		"id" : "2",
+		"title" : "Churrasco de panela de pressão",
+		"photo" : "foto do churrasco",
+        "description": "Churrasco assado em churrasqueira de alvenaria",
+        "cook_time": "120 min",
+        "servings":"10 dishes",
+        "ingredients": "Carnes Aves e Peixes",
+        "instructions": "ypsum lorem ................moriones",
+        "created_at": "1998/07/01",
+        "author_id":"1"
+	},
+	{
+		"id" : "3",
+		"title" : "Arroz à grega",
+		"photo" : "foto do arroz",
+        "description": "Receita de arroz à grega",
+        "cook_time": "40 min",
+        "servings":"6 dishes",
+        "ingredients": "4 kilos de arroz e um grego",
+        "instructions": "ypsum lorem ................moriones",
+        "created_at": "1991/02/26",
+        "author_id":"2"
+	}
+]
