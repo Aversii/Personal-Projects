@@ -1,4 +1,4 @@
-import { BadRequest_EmptyTable, CustomError, Forbbiden_Unauthorized, InvalidRequest_EmailAlreadyUsed, InvalidRequest_ShortName, InvalidRequest_ShortPassword, InvalidRequest_UserNotFound, InvalidRequest_WrongName, InvalidRequest_WrongPassword, MissingParams_InvalidEmail, MissingParams_InvalidEmailType, MissingParams_InvalidName, MissingParams_InvalidPassword } from "../error/customError";
+import { BadRequest_EmptyTable, CustomError, Forbbiden_Unauthorized, InvalidRequest_EmailAlreadyUsed, InvalidRequest_ShortName, InvalidRequest_ShortPassword, InvalidRequest_UserNotFound, InvalidRequest_WrongName, InvalidRequest_WrongPassword, MissingParams_InvalidEmail, MissingParams_InvalidEmailType, MissingParams_InvalidName, MissingParams_InvalidPassword, NotFound_IdNotFound } from "../error/customError";
 import { AuthenticationData } from "../model/authenticationData";
 import { LoginUserInputDTO, TUser, userInputDTO } from "../model/user";
 import authenticator from "../services/authenticator";
@@ -76,6 +76,18 @@ export class UserBusiness {
 
       return result   
     } catch (error:any) {
+      throw new CustomError(error.statusCode, error.sqlMessage || error.message)    
+    }
+  };
+
+  public getUserById = async(id:string)=>{
+    try{
+      const verifiedId:any = await this.userDB.findUserById(id)
+      if(!verifiedId){
+        throw new NotFound_IdNotFound()
+      }
+      return verifiedId
+    }catch (error:any) {
       throw new CustomError(error.statusCode, error.sqlMessage || error.message)    
     }
   }

@@ -9,4 +9,6 @@ const userController = new UserController()
 
 userRouter.post("/signup", userController.signup)
 userRouter.post("/login", userController.login)
-userRouter.get("/getall", userController.getAllUsers)
+userRouter.get("/getAll", userController.getAllUsers)
+userRouter.get("/getProfile/:id", userController.getUserById)
+

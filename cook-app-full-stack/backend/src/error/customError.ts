@@ -151,3 +151,9 @@ export class  Forbidden_ConflictBetweenIds extends CustomError{
         super(403, "Forbidden => There are issues between author_id and id ")
     }
 }
+
+export class NotFound_IdNotFound extends CustomError{ 
+    constructor(){
+        super(404,"Not Found => ID not found");
+    };;
+};;

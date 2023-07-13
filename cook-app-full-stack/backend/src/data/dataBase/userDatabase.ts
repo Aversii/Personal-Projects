@@ -51,16 +51,5 @@ export class UserDatabase extends BaseDatabase {
         throw new CustomError(error.statusCode, error.sqlMessage || error.message);
       }
     };
-
-    public getProfileById = async (id: string) => {
-      try {
-        const result = await UserDatabase.connection(UserDatabase.TABLE_USER)
-          .select("id", "name", "email")
-          .where("id", "like", id);
-        return result[0];
-      } catch (error: any) {
-        throw new CustomError(error.statusCode, error.sqlMessage || error.message);
-      }
-    };
   
   };;
