@@ -69,7 +69,7 @@ export class UserBusiness {
   public getAllUsers =  async (token:string)  =>{
     try {
       const tokenData = authenticator.getTokenData(token)
-      const result = await this.userDB.getUserAll()   
+      const result = await this.userDB.getAllUsers()   
 
       if (tokenData.role !== "ADMIN"){throw new Forbbiden_Unauthorized()}
       if (result.length<0){throw new BadRequest_EmptyTable()}

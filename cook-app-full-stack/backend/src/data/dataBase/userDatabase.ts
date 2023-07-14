@@ -21,7 +21,7 @@ export class UserDatabase extends BaseDatabase {
       }
     };
 
-    public getUserAll = async  ():Promise <TUser[]>=> {
+    public getAllUsers = async  ():Promise <TUser[]>=> {
       try{
         const user = await UserDatabase.connection(UserDatabase.TABLE_USER).select().orderBy("name")
         return user        

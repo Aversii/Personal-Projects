@@ -19,7 +19,7 @@ export class UserController {
       res.status(201).send({ message: "Usuário cadastrado com sucesso",token})
       
     }catch (error:any) {
-      if(error instanceof CustomError){res.status(error.statusCode).send(error.message)
+      if(error instanceof CustomError){res.status(error.statusCode ||400).send(error.message)
       }else{res.status(400).send(error.message)}
     }
   };
@@ -29,9 +29,9 @@ export class UserController {
       let input:LoginUserInputDTO = {email: req.body.email,password: req.body.password}
       const token = await this.userBusiness.login(input)
 
-      res.status(201).send({ message: "login efetuado!", token })
+      res.status(200).send({ message: "login efetuado!", token })
     }catch (error: any) {
-      if(error instanceof CustomError){res.status(error.statusCode).send(error.message)
+      if(error instanceof CustomError){res.status(error.statusCode ||400).send(error.message)
       }else{res.status(400).send(error.message)}
     }
   };
@@ -41,9 +41,10 @@ export class UserController {
       const token = req.headers.authorization as string;
       const users = await this.userBusiness.getAllUsers(token);
 
-      res.status(201).send(users);
+      
+      res.status(200).send(users);
     }catch (error:any) {
-      if(error instanceof CustomError){res.status(error.statusCode).send(error.message);
+      if(error instanceof CustomError){res.status(error.statusCode ||400).send(error.message)
       }else{res.status(400).send(error.message)}
     }
   };
@@ -53,9 +54,9 @@ export class UserController {
       let {id} = req.params
       const userById = await this.userBusiness.getUserById(id)
 
-      res.status(201).send(userById);
+      res.status(200).send(userById);
     }catch (error:any) {
-      if(error instanceof CustomError){res.status(error.statusCode).send(error.message);
+      if(error instanceof CustomError){res.status(error.statusCode ||400).send(error.message)
       }else{res.status(400).send(error.message)}
     }
   };
