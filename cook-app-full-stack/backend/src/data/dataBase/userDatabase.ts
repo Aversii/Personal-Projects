@@ -23,7 +23,9 @@ export class UserDatabase extends BaseDatabase {
 
     public getAllUsers = async  ():Promise <TUser[]>=> {
       try{
-        const user = await UserDatabase.connection(UserDatabase.TABLE_USER).select().orderBy("name")
+        const user = await UserDatabase.connection(UserDatabase.TABLE_USER)
+        .select('id','name', 'email', 'role')
+        .orderBy('name')
         return user        
       }catch (error:any) {
         throw new CustomError(error.statusCode, error.sqlMessage || error.message)
@@ -44,7 +46,7 @@ export class UserDatabase extends BaseDatabase {
     public findUserById = async (id: string) => {
       try {
         const result = await UserDatabase.connection(UserDatabase.TABLE_USER)
-        .select()
+        .select('id','name', 'email', 'role')
         .where({id});  
         return result[0];
       }catch (error: any) {

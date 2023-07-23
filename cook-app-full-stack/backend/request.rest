@@ -7,9 +7,10 @@ POST http://localhost:3003/users/signup
 Content-Type: application/json
 
 {
-   "name": "aversiii", 
-   "email": "aversiiigmail.com",
-   "password": "123456"
+   "name": "admin", 
+   "email": "admin@gmail.com",
+   "password": "123456",
+   "role":"admin"
    
 }
 
@@ -21,7 +22,7 @@ POST http://localhost:3003/users/login
 Content-Type: application/json
 
 {
-   "email": "aversiii@gmail.com", 
+   "email": "admin@gmail.com", 
    "password": "123456"
 }
 
@@ -31,13 +32,12 @@ Content-Type: application/json
 
 GET http://localhost:3003/users/getAll
 Content-Type: application/json
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdjOWEyOGU4LTVhNzYtNDJmYS1iNTFmLTE2OWVjZmUzODFjMCIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY4OTI5MTE5NiwiZXhwIjoxNjg5MzAxOTk2fQ.RKAup3FsdvRag9TZVaAibDyC0L58E-s_B-NAQBFFw6Q
-
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI4OWNjZWI3LThkZDctNDgwMi05NWMxLTVhYWE5NTdlNTc2MSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY5MDE0NDQ0OCwiZXhwIjoxNjkwMTU1MjQ4fQ.J4ULTr0udqr8WwmkQ6p6lyTNGAlHfztIj1ohMsmzjv4
 ###
 
-// 3 Get all id - requires admin authorization
+// 3 Get By ID
 
-GET http://localhost:3003/users/getProfile/1
+GET http://localhost:3003/users/1/profile/
 Content-Type: application/json
 ###
 
