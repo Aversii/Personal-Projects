@@ -28,6 +28,12 @@ export class MissingParams_InvalidEmail extends CustomError{
     };;
 };;
 
+export class MissingParams_InvalidPhoto extends CustomError{ 
+    constructor(){
+        super(422,"Missing Params => Invalid photo");
+    };;
+};;
+
 
 export class MissingParams_InvalidEmailType extends CustomError{ 
     constructor(){
@@ -56,10 +62,53 @@ export class InvalidRequest_UserNotFound extends CustomError{
     };;
 };;
 
+export class InvalidRequest_TitleCharacterLimitExceeded extends CustomError{ 
+    constructor(){
+        super(404,"Invalid Request => Title Field Is Too Big, cant exceed 70 characters");
+    };;
+};;
+
+export class InvalidRequest_DescriptionCharacterLimitExceeded extends CustomError{ 
+    constructor(){
+        super(404,"Invalid Request => Description Field Is Too Big, cant exceed 150 characters");
+    };;
+};;
+
+export class InvalidRequest_CookTimeCharacterLimitExceeded extends CustomError{ 
+    constructor(){
+        super(404,"Invalid Request => CookTime Field Is Too Big, cant exceed 20 characters");
+    };;
+};;
+
+export class InvalidRequest_ServingsCharacterLimitExceeded extends CustomError{ 
+    constructor(){
+        super(404,"Invalid Request => Servings Field Is Too Big, cant exceed 20 characters");
+    };;
+};;
+
+export class InvalidRequest_PhotoCharacterLimitExceeded extends CustomError{ 
+    constructor(){
+        super(404,"Invalid Request => Photo Field Is Too Big, cant exceed 20 characters");
+    };;
+};;
+
+export class InvalidRequest_InstructionsCharacterLimitExceeded extends CustomError{ 
+    constructor(){
+        super(404,"Invalid Request => Instructions Field Is Too Big, cant exceed 3000 characters");
+    };;
+};;
+
+export class InvalidRequest_IngredientsCharacterLimitExceeded extends CustomError{ 
+    constructor(){
+        super(404,"Invalid Request => Ingredients Field Is Too Big, cant exceed 500 characters");
+    };;
+};;
+
+
 
 export class InvalidRequest_EmptyString extends CustomError{ 
     constructor(){
-        super(404,"Invalid Request => Email field cant bem empty!");
+        super(404,"Invalid Request => This Field Cant Be An Empty String");
     };;
 };;
 

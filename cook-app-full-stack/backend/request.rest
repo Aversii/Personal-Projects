@@ -7,11 +7,10 @@ POST http://localhost:3003/users/signup
 Content-Type: application/json
 
 {
-   "name": "admin", 
-   "email": "admin@gmail.com",
+   "name": "laversii", 
+   "email": "laversii@gmail.com",
    "password": "123456",
-   "role":"admin"
-   
+   "role": "admin"   
 }
 
 ###
@@ -22,24 +21,45 @@ POST http://localhost:3003/users/login
 Content-Type: application/json
 
 {
-   "email": "admin@gmail.com", 
+   "email": "laversi@gmail.com", 
    "password": "123456"
 }
 
 ###
 
-// 3 Get all users - requires admin authorization
-
+// 3 Get all USERS
 GET http://localhost:3003/users/getAll
 Content-Type: application/json
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI4OWNjZWI3LThkZDctNDgwMi05NWMxLTVhYWE5NTdlNTc2MSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY5MDE0NDQ0OCwiZXhwIjoxNjkwMTU1MjQ4fQ.J4ULTr0udqr8WwmkQ6p6lyTNGAlHfztIj1ohMsmzjv4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZmI0YTJiLTZkZjUtNDk5Yi1iYzMwLTNhMDRiMzQ5NDZjOCIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY5NDEwODMyNiwiZXhwIjoxNjk0MTE5MTI2fQ.t-l1YzKyGdRPUFsxiClYwBj-3PT7digv8_yh1BNxSbU
 ###
 
-// 3 Get By ID
+// 4 Get USERS by ID
 
 GET http://localhost:3003/users/1/profile/
 Content-Type: application/json
 ###
 
 
+// 5 Get all RECIPES
+
+GET http://localhost:3003/recipes/all
+Content-Type: application/json
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIxYTgwMGFiLTc4YjItNDU4MS05Y2VjLWRiZDdhNTQ1NWE4NyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY5NDA5ODg2NSwiZXhwIjoxNjk0MTA5NjY1fQ.w0b5i426Jsj0TEuV8t-84bNq5RyF1cwjEyPU553YVcI
+###
+
+// 6 - CREATE NEW RECIPE - requires authorization
+POST http://localhost:3003/recipes/create
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIxYTgwMGFiLTc4YjItNDU4MS05Y2VjLWRiZDdhNTQ1NWE4NyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY5NDA5ODg2NSwiZXhwIjoxNjk0MTA5NjY1fQ.w0b5i426Jsj0TEuV8t-84bNq5RyF1cwjEyPU553YVcI
+
+{
+    "title": "Feijoada",
+    "description": "Feijoada bem gostosa",
+    "ingredients": "feijão preto, toucinho, carne de porco em geral",
+    "cookTime":"",
+    "instructions": "bota tudo pra cozinhar espera meia hora e vai ficar muito bom",
+    "photo":"feijuquinha.jpg"
+
+}
+###
 
