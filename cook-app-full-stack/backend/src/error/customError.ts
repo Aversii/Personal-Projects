@@ -11,40 +11,40 @@ export class CustomError extends Error {
 
 export class InvalidRequest_EmailAlreadyUsed extends CustomError{
     constructor(){
-        super(404, "Invalid Request => Email already been registered")
+        super(409, "Invalid Request => Email already been registered")
     }
 }
 
 export class MissingParams_InvalidName extends CustomError{ 
     constructor(){
-        super(422,"Missing Params => Invalid Name");
+        super(409,"Missing Params => Invalid Name");
     };;
 };;
 
 
 export class MissingParams_InvalidEmail extends CustomError{ 
     constructor(){
-        super(422,"Missing Params => Invalid Email");
+        super(409,"Missing Params => Invalid Email");
     };;
 };;
 
 export class MissingParams_InvalidPhoto extends CustomError{ 
     constructor(){
-        super(422,"Missing Params => Invalid photo");
+        super(409,"Missing Params => Invalid photo");
     };;
 };;
 
 
 export class MissingParams_InvalidEmailType extends CustomError{ 
     constructor(){
-        super(422,"Missing Params => Invalid Email - Email Must Contain @");
+        super(409,"Missing Params => Invalid Email - Email Must Contain @");
     };;
 };;
 
 
 export class MissingParams_InvalidPassword extends CustomError{ 
     constructor(){
-        super(422,"Missing Params => Invalid Password");
+        super(409,"Missing Params => Invalid Password");
     };;
 };;
 
@@ -64,43 +64,43 @@ export class InvalidRequest_UserNotFound extends CustomError{
 
 export class InvalidRequest_TitleCharacterLimitExceeded extends CustomError{ 
     constructor(){
-        super(404,"Invalid Request => Title Field Is Too Big, cant exceed 70 characters");
+        super(422,"Invalid Request => Title Field Is Too Big, cant exceed 70 characters");
     };;
 };;
 
 export class InvalidRequest_DescriptionCharacterLimitExceeded extends CustomError{ 
     constructor(){
-        super(404,"Invalid Request => Description Field Is Too Big, cant exceed 150 characters");
+        super(422,"Invalid Request => Description Field Is Too Big, cant exceed 150 characters");
     };;
 };;
 
 export class InvalidRequest_CookTimeCharacterLimitExceeded extends CustomError{ 
     constructor(){
-        super(404,"Invalid Request => CookTime Field Is Too Big, cant exceed 20 characters");
+        super(422,"Invalid Request => CookTime Field Is Too Big, cant exceed 20 characters");
     };;
 };;
 
 export class InvalidRequest_ServingsCharacterLimitExceeded extends CustomError{ 
     constructor(){
-        super(404,"Invalid Request => Servings Field Is Too Big, cant exceed 20 characters");
+        super(422,"Invalid Request => Servings Field Is Too Big, cant exceed 20 characters");
     };;
 };;
 
 export class InvalidRequest_PhotoCharacterLimitExceeded extends CustomError{ 
     constructor(){
-        super(404,"Invalid Request => Photo Field Is Too Big, cant exceed 20 characters");
+        super(422,"Invalid Request => Photo Field Is Too Big, cant exceed 20 characters");
     };;
 };;
 
 export class InvalidRequest_InstructionsCharacterLimitExceeded extends CustomError{ 
     constructor(){
-        super(404,"Invalid Request => Instructions Field Is Too Big, cant exceed 3000 characters");
+        super(422,"Invalid Request => Instructions Field Is Too Big, cant exceed 3000 characters");
     };;
 };;
 
 export class InvalidRequest_IngredientsCharacterLimitExceeded extends CustomError{ 
     constructor(){
-        super(404,"Invalid Request => Ingredients Field Is Too Big, cant exceed 500 characters");
+        super(422,"Invalid Request => Ingredients Field Is Too Big, cant exceed 500 characters");
     };;
 };;
 
@@ -108,14 +108,14 @@ export class InvalidRequest_IngredientsCharacterLimitExceeded extends CustomErro
 
 export class InvalidRequest_EmptyString extends CustomError{ 
     constructor(){
-        super(404,"Invalid Request => This Field Cant Be An Empty String");
+        super(422,"Invalid Request => This Field Cant Be An Empty String");
     };;
 };;
 
 
 export class BadRequest_EmptyTable extends CustomError{ 
     constructor(){
-        super(404,"Bad Request => This List Has No Entries So Far");
+        super(422,"Bad Request => This List Has No Entries So Far");
     };;
 };;
 

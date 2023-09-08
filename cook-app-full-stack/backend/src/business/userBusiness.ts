@@ -5,6 +5,7 @@ import authenticator from "../services/authenticator";
 import hashManager from "../services/hashManager";
 import idGenerator from "../services/idGenerator";
 import { UserDatabase } from "../data/dataBase/userDatabase";
+import UserValidations from "../validations/userValidations";
 
 export class UserBusiness {
 
@@ -16,26 +17,17 @@ export class UserBusiness {
   public createUser = async (input: userInputDTO) => {
     try {
       let {name, email, password, role} = input
-      const checkEmail = await this.userDB.findUserByEmail(email)
       const id =  idGenerator.generatedID()
       const hash = await hashManager.generateHash(password)
 
-      if(checkEmail){throw new InvalidRequest_EmailAlreadyUsed()}
-      if(role?.toLocaleUpperCase() !== "NORMAL" && role?.toLocaleUpperCase() !== "ADMIN"){role = "NORMAL"}
-      if(role === "admin"){role="ADMIN"}
-      if(name === ""){throw new InvalidRequest_WrongName()}
-      if(email === ""){throw new InvalidRequest_WrongName()}
-      if(password === ""){throw new InvalidRequest_WrongName()};                 
-      if(!name){throw new MissingParams_InvalidName()}
-      if(!password){throw new MissingParams_InvalidPassword()}
-      if(!email.includes("@")){throw new MissingParams_InvalidEmailType()}
-      if(!email){throw new MissingParams_InvalidEmail()}
-      if(password.length<5){throw new InvalidRequest_ShortPassword()}
-      if(name.length<2){throw new InvalidRequest_ShortName()}
 
       const result :TUser={id,email,password:hash,name,role}
 
-      await this.userDB.signup(result)
+      UserValidations.validateUserInput(result)
+      const checkEmail = await this.userDB.findUserByEmail(email);
+      if (checkEmail) {
+          throw new InvalidRequest_EmailAlreadyUsed();
+      }      await this.userDB.signup(result)
       const token = authenticator.generateToken({id,role})
 
       return token
@@ -47,9 +39,7 @@ export class UserBusiness {
   public login = async (input:LoginUserInputDTO) =>{
     try {
       const {email, password} = input
-      if(!email.includes("@")){throw new MissingParams_InvalidEmailType()}
-      if(!email) {throw new MissingParams_InvalidEmail()}
-      if(!password) {throw new MissingParams_InvalidPassword()}
+      UserValidations.validateLoginInput(input)
 
       const user = await this.userDB.findUserByEmail(email)
       if(!user) {throw new InvalidRequest_UserNotFound()}
