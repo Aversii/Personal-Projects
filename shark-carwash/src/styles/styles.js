@@ -1,9 +1,9 @@
 import styled, { css } from "styled-components";
 
 export const Container = styled.div`
-    ${(props)=> css`
-        background-color: ${props.background};
+    ${({theme})=>css`
+        background-color: ${theme.colors.terciaryClr};
     `};
-    height: 100vh;
+    height: 100vh; 
     width: 100vw;
 `;
