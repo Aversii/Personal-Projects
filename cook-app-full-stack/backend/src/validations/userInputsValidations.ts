@@ -1,12 +1,11 @@
 import { UserDatabase } from "../data/dataBase/userDatabase";
-import { InvalidRequest_EmailAlreadyUsed, InvalidRequest_ShortName, InvalidRequest_ShortPassword, InvalidRequest_WrongName, MissingParams_InvalidEmail, MissingParams_InvalidEmailType, MissingParams_InvalidName, MissingParams_InvalidPassword } from "../error/customError";
+import { CustomError, InvalidRequest_EmailAlreadyUsed, InvalidRequest_ShortName, InvalidRequest_ShortPassword, InvalidRequest_WrongName, MissingParams_InvalidEmail, MissingParams_InvalidEmailType, MissingParams_InvalidName, MissingParams_InvalidPassword } from "../error/customError";
 import { LoginUserInputDTO, userInputDTO } from "../model/user";
 
-class UserValidations {
-    private static userDB: UserDatabase;
+export class UserInputValidations {    
 
-      static validateUserInput(input: userInputDTO):void{     
-
+      static validateSignupInput(input: userInputDTO):void{     
+        
       if(input.role?.toLocaleUpperCase() !== "NORMAL" && input.role?.toLocaleUpperCase() !== "ADMIN"){input.role = "NORMAL"}
       if(input.role === "admin"){input.role="ADMIN"}
       if(input.name === ""){throw new InvalidRequest_WrongName()}
@@ -28,4 +27,3 @@ class UserValidations {
     }
 }
 
-export default UserValidations

@@ -22,7 +22,7 @@ Content-Type: application/json
 
 {
    "email": "laversiiii@gmail.com", 
-   "password": "123456"
+   "password": "123456" 
 }
 
 ###
@@ -63,3 +63,9 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNWE3ZTA5LTMzZmQt
 }
 ###
 
+// 4 Get RECIPES by author
+
+GET http://localhost:3003/recipes/recipesByAuthor/1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNWE3ZTA5LTMzZmQtNDBjNC1hM2JiLWE0YzI1NmNiYzMwNyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY5NDk4OTczMCwiZXhwIjoxNjk1MDAwNTMwfQ.MlZglf_XlQ2dmO7kFDY0dwMZsRvNph9is1DaLPVomoA
+###

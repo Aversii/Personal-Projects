@@ -5,7 +5,7 @@ import authenticator from "../services/authenticator";
 import hashManager from "../services/hashManager";
 import idGenerator from "../services/idGenerator";
 import { UserDatabase } from "../data/dataBase/userDatabase";
-import UserValidations from "../validations/userValidations";
+import {UserInputValidations} from "../validations/userInputsValidations";
 
 export class UserBusiness {
 
@@ -13,7 +13,7 @@ export class UserBusiness {
   constructor(){
     this.userDB = new UserDatabase()
   }
-  
+    
   public createUser = async (input: userInputDTO) => {
     try {
       let {name, email, password, role} = input
@@ -23,11 +23,14 @@ export class UserBusiness {
 
       const result :TUser={id,email,password:hash,name,role}
 
-      UserValidations.validateUserInput(result)
+      UserInputValidations.validateSignupInput(result)
+
       const checkEmail = await this.userDB.findUserByEmail(email);
       if (checkEmail) {
           throw new InvalidRequest_EmailAlreadyUsed();
-      }      await this.userDB.signup(result)
+      }      
+       
+      await this.userDB.signup(result)
       const token = authenticator.generateToken({id,role})
 
       return token
@@ -39,7 +42,7 @@ export class UserBusiness {
   public login = async (input:LoginUserInputDTO) =>{
     try {
       const {email, password} = input
-      UserValidations.validateLoginInput(input)
+      UserInputValidations.validateLoginInput(input)
 
       const user = await this.userDB.findUserByEmail(email)
       if(!user) {throw new InvalidRequest_UserNotFound()}
@@ -59,8 +62,7 @@ export class UserBusiness {
   public getAllUsers =  async (token:string)  =>{
     try {
       const tokenData = authenticator.getTokenData(token)
-      const result = await this.userDB.getAllUsers()   
-
+      const result = await this.userDB.getAllUsers()
       if (tokenData.role !== "ADMIN"){throw new Forbbiden_Unauthorized()}
       if (result.length<0){throw new BadRequest_EmptyTable()}
 
@@ -70,8 +72,9 @@ export class UserBusiness {
     }
   };
 
-  public getUserById = async(id:string)=>{
+  public getUserById = async(id:string, token: string)=>{
     try{
+      const tokenData = authenticator.getTokenData(token)
       const verifiedId:any = await this.userDB.findUserById(id)
       if(!verifiedId){
         throw new NotFound_IdNotFound()

@@ -27,17 +27,25 @@ export class RecipeDatabase extends BaseDatabase{
       }
    
 
-    async getAllRecpies ():Promise <any> {
+    async getAllRecipes ():Promise <any> {
         try{
           const recipe = await RecipeDatabase.connection(RecipeDatabase.TABLE_RECIPE).select()
           .orderBy("title")
           return recipe
         }catch (error:any) {
           throw new CustomError(error.statusCode, error.sqlMessage || error.message)
-        }
-    
-      }
+        }    
+    }
 
+    async getRecipesByAuthor(authorId:string):Promise<any>{
+      try{
+        const recipesByAuthor = await RecipeDatabase.connection(RecipeDatabase.TABLE_RECIPE).select().where("author_id",authorId)
+        return recipesByAuthor
+
+      }catch (error:any) {
+        throw new CustomError(error.statusCode, error.sqlMessage || error.message)
+      }  
+    }
       
     
     

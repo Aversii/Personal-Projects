@@ -32,7 +32,7 @@ export class RecipeBusiness{
 
     public getAllRecipesBusiness=async(token:string):Promise<any>=>{
         try{
-          const recipe = await this.recipeDB.getAllRecpies()
+          const recipe = await this.recipeDB.getAllRecipes()
           const tokenData = authenticator.getTokenData(token)
           
           return recipe
@@ -41,4 +41,18 @@ export class RecipeBusiness{
         }
     
       }
+
+      public getRecipeByAuthor = async (input:string, token:string):Promise<any>=>{
+        try{
+          const authorId = input
+          const tokenData = authenticator.getTokenData(token)
+
+          const getByAuthor = await this.recipeDB.getRecipesByAuthor(authorId)
+          return getByAuthor
+        } catch (error:any) {
+          throw new CustomError(error.statusCode, error.sqlMessage || error.message)      
+        }
+
+    }
+
 }

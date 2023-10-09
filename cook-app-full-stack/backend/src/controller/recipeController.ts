@@ -29,9 +29,23 @@ export class RecipeController{
     
           const recipes = await this.recipeBusiness.getAllRecipesBusiness(token);
     
-          res.status(201).send(recipes);      
+          res.status(200).send(recipes);      
         } catch (error:any) {
           res.status(400).send(error.message);
+        };
+      };;
+
+      public getRecipeByAuthor = async (req:Request, res:Response)=>{
+        try {
+          const id= req.params.id;
+          const token = req.headers.authorization as string;
+    
+    
+          const result = await this.recipeBusiness.getRecipeByAuthor(id,token);
+          
+          res.status(200).send(result);
+        } catch (error:any) {
+          res.status(400).send(error.message);      
         };
       };;
   
