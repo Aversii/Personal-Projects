@@ -51,7 +51,7 @@ export class MissingParams_InvalidPassword extends CustomError{
 
 export class InvalidRequest_WrongPassword extends CustomError{ 
     constructor(){
-        super(403,"Invalid Data => Password Does Not Match");
+        super(403,"Invalid Data => jhonzeira é lindo");
     };;
 };;
 
@@ -140,6 +140,17 @@ export class InvalidRequest_ShortPassword extends CustomError{
     };;
 };;
 
+export class InvalidRequest_BigPassword extends CustomError{ 
+    constructor(){
+        super(422,"Invalid Request => Password Must Contain Less Than 20 characters");
+    };;
+};;
+
+export class InvalidRequest_SamePassword extends CustomError{ 
+    constructor(){
+        super(422,"Invalid Request => New Password And Old Password Are The Same, Try Another One");
+    };;
+};;
 
 export class InvalidRequest_ShortName extends CustomError{ 
     constructor(){
@@ -206,3 +217,31 @@ export class NotFound_IdNotFound extends CustomError{
         super(404,"Not Found => ID not found");
     };;
 };;
+
+export class NotFound_RecipeNotFound extends CustomError{ 
+    constructor(){
+        super(404,"Not Found => Recipe Not Found");
+    };;
+};;
+
+export class NotFound_ThereIsNoRecipe extends CustomError{ 
+    constructor(){
+        super(404,"Not Found => No Recipes Found For This ID");
+    };;
+};;
+
+
+
+export class  Forbidden_CantChangeOrDelete extends CustomError{
+    constructor(){
+        super(403, "Forbidden => Cant Delete or Edit Other People Recipes")
+    }
+}
+
+export class NotFound_ThereIsNoLike extends CustomError{ 
+    constructor(){
+        super(404,"Not Found => This User Does Not Like Any Recipe Yet");
+    };;
+};;
+
+

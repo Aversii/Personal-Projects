@@ -87,6 +87,8 @@ export class Recipe{
     
 }
 
+
+
 export type TRecipe  = {
     id: string,
     title: string,
@@ -100,7 +102,14 @@ export type TRecipe  = {
     authorId:string,
   }
 
-  export interface RecipeInputDTO {
+  export type TLikes  = {
+    userId: string,
+    recipeId: string
+  }
+
+  
+  
+  export interface RecipeCreateInputDTO {
     title: string,
     photo: string,
     description: string,
@@ -108,4 +117,32 @@ export type TRecipe  = {
     cookTime?:string,
     servings?:string,
     ingredients:string,
+  }
+
+  export interface RecipeEditInputDTO {
+    id:string
+    title?: string,
+    photo?: string,
+    description?: string,
+    instructions?:string,
+    cookTime?:string,
+    servings?:string,
+    ingredients?:string,
+  }
+
+  export type TLikeRecipe={
+    id:string,
+    recipeId:string,
+    liked?:number
+
+  }
+
+  export interface DislikeInputDTO {
+    id:string,
+    recipeId:string,
+  }
+
+  export interface DislikeInputDTO {
+    id:string,
+    recipeId:string,
   }

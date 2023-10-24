@@ -33,15 +33,18 @@ const createTables = () => connection
 
    CREATE TABLE IF NOT EXISTS cookApp_follows(
       user_id VARCHAR(255) NOT NULL,
-      following_id VARCHAR(255) NOT NULL,
+      target_id VARCHAR(255) NOT NULL,
+      followed BOOLEAN NOT NULL DEFAULT (1),
+
       FOREIGN KEY (user_id) REFERENCES cookApp_users (id),
-      FOREIGN KEY (following_id) REFERENCES cookApp_users (id),
-      PRIMARY KEY (user_id, following_id)
+      FOREIGN KEY (target_id) REFERENCES cookApp_users (id),
+      PRIMARY KEY (user_id, target_id)
    );
 
    CREATE TABLE IF NOT EXISTS cookApp_likes(
       user_id VARCHAR(255) NOT NULL,
       recipe_id VARCHAR(255) NOT NULL,
+      liked BOOLEAN NOT NULL DEFAULT (1),
       FOREIGN KEY (user_id) REFERENCES cookApp_users (id),
       FOREIGN KEY (recipe_id) REFERENCES cookApp_recipes (id),
       PRIMARY KEY (user_id, recipe_id)
