@@ -48,11 +48,27 @@ export class User {
   }
 }
 
-export interface userInputDTO {
+export interface SignupInputDTO {
   name: string,
   email: string,
   password: string,
   role?:string
+}
+
+
+export interface LoginUserInputDTO {
+  email: string,
+  password: string
+}
+
+export interface ChangePasswordInputDTO {
+  oldPassword: string,
+  newPassword: string,
+}
+
+export type TFollow = {
+  id:string,
+  followedId:string
 }
 
 export type TUser  = {
@@ -63,7 +79,13 @@ export type TUser  = {
   role?:string
 }
 
-export interface LoginUserInputDTO {
-  email: string,
-  password: string
+export type TChangePassword ={
+  id:string,
+  newPassword:string
+}
+
+
+export type TUnfollow = {
+  id:string,
+  unfollowedId:string
 }

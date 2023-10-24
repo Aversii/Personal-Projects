@@ -7,13 +7,11 @@ POST http://localhost:3003/users/signup
 Content-Type: application/json
 
 {
-   "name": "admin", 
-   "email": "admin@gmail.com",
+   "name": "Aversii", 
+   "email": "Aversii@gmail.com",
    "password": "123456",
-   "role":"admin"
-   
+   "role": "admin"   
 }
-
 ###
 
 // 2 - Login
@@ -22,24 +20,124 @@ POST http://localhost:3003/users/login
 Content-Type: application/json
 
 {
-   "email": "admin@gmail.com", 
+   "email": "aversii@gmail.com", 
    "password": "123456"
 }
-
 ###
 
-// 3 Get all users - requires admin authorization
-
-GET http://localhost:3003/users/getAll
+// 3 - Change Password - Requires authentication by token
+PUT http://localhost:3003/users/changePassword
 Content-Type: application/json
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI4OWNjZWI3LThkZDctNDgwMi05NWMxLTVhYWE5NTdlNTc2MSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY5MDE0NDQ0OCwiZXhwIjoxNjkwMTU1MjQ4fQ.J4ULTr0udqr8WwmkQ6p6lyTNGAlHfztIj1ohMsmzjv4
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVlMzNmMmI0LWFkODEtNDc0My04ZTY5LTRiOWUyN2QzMzJkNyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY5ODEzNDc0MSwiZXhwIjoxNjk4MTQ1NTQxfQ.aQYnpg7vZcXymPtZpju21iWCecBER7m6K-xHUF7G5iU
+
+{
+   "oldPassword": "123456", 
+   "newPassword": "1234567"
+}
 ###
 
-// 3 Get By ID
-
-GET http://localhost:3003/users/1/profile/
+// 4 - Get all Users - Requires authentication by token and admin authorization.
+GET http://localhost:3003/users/getAllUsers
 Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVlMzNmMmI0LWFkODEtNDc0My04ZTY5LTRiOWUyN2QzMzJkNyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY5ODEzNDc0MSwiZXhwIjoxNjk4MTQ1NTQxfQ.aQYnpg7vZcXymPtZpju21iWCecBER7m6K-xHUF7G5iU
+###
+
+// 4.1 - Get Users By ID - Requires authentication by token
+GET http://localhost:3003/users/1/profile
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVlMzNmMmI0LWFkODEtNDc0My04ZTY5LTRiOWUyN2QzMzJkNyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY5ODEzNDc0MSwiZXhwIjoxNjk4MTQ1NTQxfQ.aQYnpg7vZcXymPtZpju21iWCecBER7m6K-xHUF7G5iU
 ###
 
 
 
+// 5 - Follow A User - Requires authentication by token
+POST http://localhost:3003/users/1/follow
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVlMzNmMmI0LWFkODEtNDc0My04ZTY5LTRiOWUyN2QzMzJkNyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY5ODEzNDc0MSwiZXhwIjoxNjk4MTQ1NTQxfQ.aQYnpg7vZcXymPtZpju21iWCecBER7m6K-xHUF7G5iU
+###
+
+// 5.1 - Unfollow A User - Requires authentication by token
+DELETE http://localhost:3003/users/1/unfollow
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVlMzNmMmI0LWFkODEtNDc0My04ZTY5LTRiOWUyN2QzMzJkNyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY5ODEzNDc0MSwiZXhwIjoxNjk4MTQ1NTQxfQ.aQYnpg7vZcXymPtZpju21iWCecBER7m6K-xHUF7G5iU
+### 
+
+// 5.2 - Get all follows - Requires authentication by token
+GET http://localhost:3003/users/getAllFollows
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVlMzNmMmI0LWFkODEtNDc0My04ZTY5LTRiOWUyN2QzMzJkNyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY5ODEzNDc0MSwiZXhwIjoxNjk4MTQ1NTQxfQ.aQYnpg7vZcXymPtZpju21iWCecBER7m6K-xHUF7G5iU
+###
+
+// 6 - GET FEED - Requires authentication by token
+GET http://localhost:3003/users/feed
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQyNTY1YmI4LWVjZDMtNDUzZC1iZjI4LTUzNzRjZDJlNDk4ZSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY5NzUyODE2MSwiZXhwIjoxNjk3NTM4OTYxfQ.tPK3-THoK2ofP7Tf_r7M1ZQQhgouANEGv7I0NLqS-Fw
+###
+
+
+//_________________________________________ RECIPES ENDPOINTS ______________________________________//
+
+// 7 - Create New Recipe - Requires authentication by token
+POST http://localhost:3003/recipes/create
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQyNTY1YmI4LWVjZDMtNDUzZC1iZjI4LTUzNzRjZDJlNDk4ZSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY5NzUyODE2MSwiZXhwIjoxNjk3NTM4OTYxfQ.tPK3-THoK2ofP7Tf_r7M1ZQQhgouANEGv7I0NLqS-Fw
+
+{
+    "title": "Sopa De Letrinhas",
+    "description": "Sopa deliciosa para o verão",
+    "ingredients": "Água e Letrinhas Sal e Pimenta",
+    "cookTime":"15min",
+    "servings":"4 plates",
+    "instructions": "joga tudo na panela espera ficar bom. Mexe mexe mexe, em 15 min fica prontinho.",
+    "photo":"sopadeletrinha.jpg" 
+
+}
+###
+
+// 8 - Get All Recipes - Requires authentication by token
+GET http://localhost:3003/recipes/all
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQyNTY1YmI4LWVjZDMtNDUzZC1iZjI4LTUzNzRjZDJlNDk4ZSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY5NzUyODE2MSwiZXhwIjoxNjk3NTM4OTYxfQ.tPK3-THoK2ofP7Tf_r7M1ZQQhgouANEGv7I0NLqS-Fw
+###
+
+// 8.1 - Get Recipes By Id - Requires authentication by token
+
+GET http://localhost:3003/recipes/1
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQyNTY1YmI4LWVjZDMtNDUzZC1iZjI4LTUzNzRjZDJlNDk4ZSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY5NzUyODE2MSwiZXhwIjoxNjk3NTM4OTYxfQ.tPK3-THoK2ofP7Tf_r7M1ZQQhgouANEGv7I0NLqS-Fw
+###
+
+// 8.2 - Get Recipes By Author - Requires authentication by token
+GET http://localhost:3003/recipes/recipesByAuthor/1
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQyNTY1YmI4LWVjZDMtNDUzZC1iZjI4LTUzNzRjZDJlNDk4ZSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY5NzUyODE2MSwiZXhwIjoxNjk3NTM4OTYxfQ.tPK3-THoK2ofP7Tf_r7M1ZQQhgouANEGv7I0NLqS-Fw
+###
+
+
+// 9 - Edit Recipe - Requires authentication by token
+PUT  http://localhost:3003/recipes/editRecipe/35927651-6bc2-4a86-b845-76ac2f5d2428
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQyNTY1YmI4LWVjZDMtNDUzZC1iZjI4LTUzNzRjZDJlNDk4ZSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY5NzUyODE2MSwiZXhwIjoxNjk3NTM4OTYxfQ.tPK3-THoK2ofP7Tf_r7M1ZQQhgouANEGv7I0NLqS-Fw
+
+{
+    "title": "Churrasco",
+    "description": "Churrasco feito com contra filé",
+    "instructions": "Acender churrasqueira, Colocar os bifes para assar, virar quando estiver rosada a carne",
+    "cookTime":" 60 min",
+    "servings":"15 pessoas",
+    "ingredients": "4 kilos de contra filé e carvão"
+}
+###
+
+// 10 - Delete Recipe - Requires authentication by token
+DELETE http://localhost:3003/recipes/35927651-6bc2-4a86-b845-76ac2f5d2428
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQyNTY1YmI4LWVjZDMtNDUzZC1iZjI4LTUzNzRjZDJlNDk4ZSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY5NzUyODE2MSwiZXhwIjoxNjk3NTM4OTYxfQ.tPK3-THoK2ofP7Tf_r7M1ZQQhgouANEGv7I0NLqS-Fw
+###
+
+// 11 - Like A Recipe - Requires authentication by token
+POST http://localhost:3003/recipes/1/like
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQyNTY1YmI4LWVjZDMtNDUzZC1iZjI4LTUzNzRjZDJlNDk4ZSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY5NzUyODE2MSwiZXhwIjoxNjk3NTM4OTYxfQ.tPK3-THoK2ofP7Tf_r7M1ZQQhgouANEGv7I0NLqS-Fw
+### 
+
+// 11.1 - Disike A Recipe - Requires authentication by token
+DELETE http://localhost:3003/recipes/1/dislike
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQyNTY1YmI4LWVjZDMtNDUzZC1iZjI4LTUzNzRjZDJlNDk4ZSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY5NzUyODE2MSwiZXhwIjoxNjk3NTM4OTYxfQ.tPK3-THoK2ofP7Tf_r7M1ZQQhgouANEGv7I0NLqS-Fw
+### 
+
+
+// 11.2 - Get All Likes - Requires authentication by token
+GET http://localhost:3003/recipes/getAllLikes
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQyNTY1YmI4LWVjZDMtNDUzZC1iZjI4LTUzNzRjZDJlNDk4ZSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY5NzUyODE2MSwiZXhwIjoxNjk3NTM4OTYxfQ.tPK3-THoK2ofP7Tf_r7M1ZQQhgouANEGv7I0NLqS-Fw
+###
