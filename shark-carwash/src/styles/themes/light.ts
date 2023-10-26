@@ -9,6 +9,10 @@ const light: DefaultTheme = {
       primaryTxt: "#64e3ff",
       secundaryTxt: "#ccc",
       terciaryTxt: "#000d31",
+    },
+
+    imgs:{
+        wallpaper:"https://www.acquazero.com/wp-content/uploads/2021/10/lavagem-automotiva-a-seco-2.jpg"
     }
   };
   

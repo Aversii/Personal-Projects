@@ -11,8 +11,6 @@ interface IProps{
 
 const goToWpp = () => {
     const url = 'https://web.whatsapp.com/send/?phone=5511970970090&text=Olá, gostaria de agendar uma lavagem';
-    
-    // Abre um novo link em uma nova guia do navegador
     window.open(url, '_blank');
 }
 

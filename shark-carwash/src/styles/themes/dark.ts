@@ -9,6 +9,9 @@ const dark: DefaultTheme = {
       secundaryTxt: "#ccc",
       primaryTxt: "#64e3ff",
       terciaryTxt: "#000d31",
+    },
+    imgs:{
+        wallpaper:"https://i1.sndcdn.com/artworks-yJD0NNqYxPgn8y8M-z80z6w-t500x500.jpg"
     }
   };
   

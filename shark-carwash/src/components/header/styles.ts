@@ -62,3 +62,18 @@ top: 105px;
 font-size: 10px;
 `
 
+export const BackgroundImg = styled.img`
+width: 100vw;
+height: 42vh;
+padding-top:3px;
+object-fit: cover;
+  filter: blur(20px); /* Começa com um desfoque significativo */
+  opacity: 0; /* Começa completamente transparente */
+  transition: filter 1s ease-in-out, opacity 1s ease-in-out; /* Aplica transições para filter e opacity */
+  
+  /* Remove o desfoque e aumenta a opacidade quando a imagem estiver visível */
+  &.visible {
+    filter: blur(0); /* Remove o desfoque */
+    opacity: 1; /* Torna completamente visível */
+  }
+`;

@@ -12,5 +12,8 @@ declare module "styled-components"{
             secundaryTxt:string;
             terciaryTxt:string;
         }
+        imgs:{
+            wallpaper:string;
+        }
     }
 }

@@ -1,29 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { DefaultTheme, ThemeProvider } from 'styled-components';
 import Header from './components/header/header';
 import GlobalStyle from './styles/global';
 import light from './styles/themes/light';
 import dark from './styles/themes/dark';
-import usePersistedState from "./hooks/usePersistedState"
+import usePersistedState from "./hooks/usePersistedState";
+import { BackgroundImg } from './components/header/styles';
+
 function App() {
+  const [theme, setTheme] = usePersistedState<DefaultTheme>("theme", light);
+  const [isVisible, setIsVisible] = useState(false);
 
-const [theme, setTheme]= usePersistedState<DefaultTheme>("theme",light)
+  useEffect(() => {setIsVisible(true)}, [theme]); 
 
-const toggleTheme=()=>{
-  setTheme(theme.title === "dark" ? light: dark)
-}
+  const toggleTheme = () => {
+    setIsVisible(false);
+    setTimeout(() => {
+      setTheme(theme.title === "dark" ? light : dark);
+    }, 300); 
+  };
+
   return (
-
     <ThemeProvider theme={theme}>
       <div className="App">
-      <GlobalStyle/>
-
-      <Header toggleTheme={toggleTheme} />
-
+        <GlobalStyle />
+        <Header toggleTheme={toggleTheme} />
+        <BackgroundImg src={theme.imgs.wallpaper} alt="Wallpaper" className={isVisible ? "visible" : ""} />
       </div>
-
     </ThemeProvider>
-
   );
 }
 
