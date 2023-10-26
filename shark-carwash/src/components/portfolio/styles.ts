@@ -1,52 +1,47 @@
 import styled from "styled-components";
 
-export const AboutContainer = styled.div`
+export const PortfolioContainer = styled.div`
+margin-top: 3px;
 display: flex;
 flex-direction: column;
-height: 500px;
+height: 450px;
 background-color: ${props => props.theme.colors.primaryBackground};
 align-items: center;
 justify-content: center;
-padding: 0 30px;
 color: #FFF;
+padding: 0 30px;
+
 
 
 
 `
 export const GridContainer = styled.div`
   display: grid;
-  background-color: ${props => props.theme.colors.primaryBackground};
-  gap: 15px;
-  grid-template-rows: 110px 110px 110px; 
-  grid-template-columns: 110px ;
-  margin: 20px;
-  height: 380px;
+  grid-template-columns: 1fr 1fr ; /* 3 colunas com largura igual (1fr) */
+  grid-template-rows: 1fr 1fr 1fr; /* 2 linhas com altura igual (1fr) */
+  grid-gap: 5px; /* Espaçamento entre os itens (vertical e horizontalmente) */
+  width: 97%; /* Ocupa toda a largura do pai */
+  height: 97%; /* Ocupa toda a altura do pai */
 
-  
-
-
-
-`
+`;
 
 export const GridItem = styled.div`
-  //background-color: ${props => props.theme.colors.secundaryBackground};
+  background-color: ${props => props.theme.colors.secundaryBackground};
   color: #fff;
-  padding: 10px;
-  margin:  0 -70px;
+  margin-left: -30px;
   text-align: center;
   display: flex;
   flex-direction: column;
   border: solid 1px ${props => props.theme.colors.primaryTxt};
   border-radius: 20px;
-  width: 250px;
+  width: 165px;
+  height: 120px;
+  margin-right:45px;
+  margin-top: 10px;
+
+`;
 
 
-  :nth-child(2) span{
-    color: ${props => props.theme.colors.primaryTxt};
-
-  }
-
-`
 
 export const MainTitle = styled.span`
     color: ${props => props.theme.colors.primaryTxt};

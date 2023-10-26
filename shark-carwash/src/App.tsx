@@ -7,6 +7,7 @@ import dark from './styles/themes/dark';
 import usePersistedState from "./hooks/usePersistedState";
 import { BackgroundImg } from './components/header/styles';
 import About from './components/about/about';
+import Portfolio from './components/portfolio/portfolio';
 
 function App() {
   const [theme, setTheme] = usePersistedState<DefaultTheme>("theme", light);
@@ -28,6 +29,7 @@ function App() {
         <Header toggleTheme={toggleTheme} />
         <BackgroundImg src={theme.imgs.wallpaper} alt="Wallpaper" className={isVisible ? "visible" : ""} />
         <About/>
+        <Portfolio/>
       </div>
     </ThemeProvider>
   );
