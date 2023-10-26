@@ -12,7 +12,6 @@ export default createGlobalStyle`
         font-size: 16px;
         color: ${props => props.theme.colors.primaryTxt};
         font-family: sans-serif;
-        height: 2000px;
     }
 
 

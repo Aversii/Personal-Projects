@@ -8,6 +8,7 @@ import usePersistedState from "./hooks/usePersistedState";
 import { BackgroundImg } from './components/header/styles';
 import About from './components/about/about';
 import Portfolio from './components/portfolio/portfolio';
+import Footer from './components/footer/footer';
 
 function App() {
   const [theme, setTheme] = usePersistedState<DefaultTheme>("theme", light);
@@ -30,6 +31,7 @@ function App() {
         <BackgroundImg src={theme.imgs.wallpaper} alt="Wallpaper" className={isVisible ? "visible" : ""} />
         <About/>
         <Portfolio/>
+        <Footer/>
       </div>
     </ThemeProvider>
   );
