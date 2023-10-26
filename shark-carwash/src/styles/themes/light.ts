@@ -1,12 +1,16 @@
-// eslint-disable-next-line import/no-anonymous-default-export
-export default{
-    title:'light',
+import { DefaultTheme } from "styled-components";
 
-    colors:{
-        primary: " #e69500",
-        secundary:"blue",
-
-        background:"#f5f5f5",
-        text:"#333"
+const light: DefaultTheme = {
+    title: 'light',
+    colors: {
+      primaryBackground: "#000d31",
+      secundaryBackground: "#31a0d9",
+      terciaryBackground: "#4b92a7",
+      primaryTxt: "#64e3ff",
+      secundaryTxt: "#ccc",
+      terciaryTxt: "#000d31",
     }
-}
+  };
+  
+  export default light;
+  
