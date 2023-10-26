@@ -67,13 +67,12 @@ width: 100vw;
 height: 42vh;
 padding-top:3px;
 object-fit: cover;
-  filter: blur(20px); /* Começa com um desfoque significativo */
-  opacity: 0; /* Começa completamente transparente */
-  transition: filter 1s ease-in-out, opacity 1s ease-in-out; /* Aplica transições para filter e opacity */
+filter: blur(20px);
+opacity: 0;
+transition: filter 1s ease-in-out, opacity 1s ease-in-out; 
   
-  /* Remove o desfoque e aumenta a opacidade quando a imagem estiver visível */
   &.visible {
-    filter: blur(0); /* Remove o desfoque */
-    opacity: 1; /* Torna completamente visível */
+    filter: blur(0); 
+    opacity: 1; 
   }
 `;
