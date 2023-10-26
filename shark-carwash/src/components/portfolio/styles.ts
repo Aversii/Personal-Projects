@@ -17,12 +17,11 @@ padding: 0 30px;
 `
 export const GridContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr ; /* 3 colunas com largura igual (1fr) */
-  grid-template-rows: 1fr 1fr 1fr; /* 2 linhas com altura igual (1fr) */
-  grid-gap: 5px; /* Espaçamento entre os itens (vertical e horizontalmente) */
-  width: 97%; /* Ocupa toda a largura do pai */
-  height: 97%; /* Ocupa toda a altura do pai */
-
+  grid-template-columns: 1fr 1fr ;
+  grid-template-rows: 1fr 1fr 1fr; 
+  grid-gap: 5px;
+  width: 97%; 
+  height: 97%; 
 `;
 
 export const GridItem = styled.div`
