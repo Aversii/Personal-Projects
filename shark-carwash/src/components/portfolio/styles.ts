@@ -10,10 +10,6 @@ align-items: center;
 justify-content: center;
 color: #FFF;
 padding: 0 30px;
-
-
-
-
 `
 export const GridContainer = styled.div`
   display: grid;

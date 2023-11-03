@@ -20,16 +20,16 @@ const About: React.FC = () =>{
            <GridContainer>
                 <GridItem>
                 <Title>Lava-Rápido</Title>
-                <FontAwesomeIcon icon={faCarOn} beat size="2xl" style={{color: "#64e3ff",}}/>
+                <FontAwesomeIcon icon={faCarOn} beat size="2xl" style={{color: "#64e3ff", marginTop:"-10px"}}/>
                                 </GridItem>
                 <GridItem >
                     <Title>Higienização</Title>
-                <FontAwesomeIcon icon={faSprayCanSparkles} beat size="2xl" style={{color: "#64e3ff",}} />
+                <FontAwesomeIcon icon={faSprayCanSparkles} beat size="2xl" style={{color: "#64e3ff", marginTop:"-10px", marginLeft:"10px"}} />
                     
                 </GridItem>
                 <GridItem>
                 <Title>Polimento de Faróis</Title>
-                <FontAwesomeIcon icon={faEyeLowVision} beat size="2xl" style={{color: "#64e3ff",}} />
+                <FontAwesomeIcon icon={faEyeLowVision} beat size="2xl" style={{color: "#64e3ff", marginTop:"-10px"}} />
                 </GridItem>
            </GridContainer>
 

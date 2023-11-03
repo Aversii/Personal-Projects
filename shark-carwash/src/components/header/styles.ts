@@ -67,7 +67,7 @@ width: 100vw;
 height: 42vh;
 padding-top:3px;
 object-fit: cover;
-filter: blur(20px);
+filter: blur(10px);
 opacity: 0;
 transition: filter 1s ease-in-out, opacity 1s ease-in-out; 
   

@@ -10,7 +10,7 @@ interface IProps{
 }
 
 const goToWpp = () => {
-    const url = 'https://web.whatsapp.com/send/?phone=5511970970090&text=Olá, gostaria de agendar uma lavagem';
+    const url = 'https://web.whatsapp.com/send/?phone=5511970970090&text=Olá, Gostaria de agendar uma lavagem. Qual o horário disponível?';
     window.open(url, '_blank');
 }
 
@@ -58,10 +58,9 @@ const Header: React.FC<IProps> = ({toggleTheme}) =>{
                 <p> Lavagem Automotiva Especializada</p>
             </SubtitleContainer>
             <ContactContainer onClick={goToWpp}>
-                <p>Solicite por Whatsapp   </p>    
+                <p style={{paddingRight:"1vw"}} >Solicite por Whatsapp   </p>    
 
-            <FontAwesomeIcon icon={faWhatsapp} beat size="lg" style={{color: "#64e3ff",}} />                
-                <p> 11 970970090</p>
+            <FontAwesomeIcon icon={faWhatsapp} beat size="lg" style={{color: "#64e3ff", paddingRight:"3vw"}} />                
 
             </ContactContainer>
            

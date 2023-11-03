@@ -8,7 +8,7 @@ import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 const Footer: React.FC = () =>{
     const {colors,title} = useContext(ThemeContext)
     const goToWpp = () => {
-        const url = 'https://web.whatsapp.com/send/?phone=5511970970090&text=Olá, gostaria de agendar uma lavagem';
+        const url = 'https://web.whatsapp.com/send/?phone=5511970970090&text=Olá, Gostaria de agendar uma lavagem. Qual o horário disponível?';
         window.open(url, '_blank');
     }
     
@@ -18,7 +18,7 @@ const Footer: React.FC = () =>{
            
            <MainTitle>@2023 - Shark Wash </MainTitle>
            <MainTitle>Rua Amaro Silles da Silva, 12 - Itapecerica da Serra</MainTitle>
-           <FontAwesomeIcon icon={faWhatsapp} beat size="lg" style={{color: "#64e3ff",}} />          
+           <FontAwesomeIcon icon={faWhatsapp} beat size="lg" style={{color: "#64e3ff",paddingTop:"1px"}} />          
 
         </FooterContainer>
     );
