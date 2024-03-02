@@ -7,8 +7,8 @@ POST http://localhost:3003/users/signup
 Content-Type: application/json
 
 {
-   "name": "Aversii", 
-   "email": "Aversii@gmail.com",
+   "name": "Aversi", 
+   "email": "aversi@gmail.com",
    "password": "123456",
    "role": "admin"   
 }
@@ -20,7 +20,7 @@ POST http://localhost:3003/users/login
 Content-Type: application/json
 
 {
-   "email": "aversii@gmail.com", 
+   "email": "aversi@gmail.com", 
    "password": "123456"
 }
 ###
@@ -39,7 +39,7 @@ Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVlMzNmMmI0LWFkODEtN
 // 4 - Get all Users - Requires authentication by token and admin authorization.
 GET http://localhost:3003/users/getAllUsers
 Content-Type: application/json
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVlMzNmMmI0LWFkODEtNDc0My04ZTY5LTRiOWUyN2QzMzJkNyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY5ODEzNDc0MSwiZXhwIjoxNjk4MTQ1NTQxfQ.aQYnpg7vZcXymPtZpju21iWCecBER7m6K-xHUF7G5iU
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRlMWFlMGI1LWFlMTItNDBhZC05OTMzLTM3NWIxYmRkYmI0MiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTcwOTE0NzMxNywiZXhwIjoxNzA5MTY4OTE3fQ.l0xbjUvliy8qVCvWS5o-Ejerz8TxBqCD7JowLj6Z2kY
 ###
 
 // 4.1 - Get Users By ID - Requires authentication by token

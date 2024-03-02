@@ -24,7 +24,7 @@ export class UserBusiness {
       UserInputValidations.validateSignupInput(user)      
       const checkEmail = await this.userDB.findUserByEmail(email)      
       if (checkEmail) {throw new InvalidRequest_EmailAlreadyUsed()}      
-     
+    
       const result = await this.userDB.signup(user)
       const token = authenticator.generateToken({id,role})
       
