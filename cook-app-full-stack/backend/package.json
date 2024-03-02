@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage --coverageReporters=html",
+    "test": "jest --coverage --watch",
     "start": "tsc && node ./build/index.js",
     "dev": "tsnd --transpile-only --ignore-watch node_modules ./src/index.ts",
     "build": "tsc",
