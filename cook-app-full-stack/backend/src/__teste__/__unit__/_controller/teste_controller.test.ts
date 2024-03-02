@@ -1,6 +1,6 @@
-import { UserController } from "../../controller/userController";
+import { UserController } from "../../../controller/userController";
 import { Request, Response } from 'express';
-import { SignupInputDTO, LoginUserInputDTO } from '../../model/user';
+import { SignupInputDTO, LoginUserInputDTO } from '../../../model/user';
 
 jest.mock('../../business/userBusiness', () => {
     return {
