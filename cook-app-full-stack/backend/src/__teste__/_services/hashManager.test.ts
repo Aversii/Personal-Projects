@@ -1,6 +1,6 @@
 
 import * as bcrypt from "bcrypt"
-import hashManager from "../../../services/hashManager"
+import hashManager from "../../services/hashManager"
 const pass = "123456"
 
 
