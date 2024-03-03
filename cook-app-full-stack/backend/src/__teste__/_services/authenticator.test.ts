@@ -2,8 +2,8 @@ import * as jwt from "jsonwebtoken";
 
 import * as dotenv from 'dotenv';
 dotenv.config();
-import { AuthenticationData } from "../../../model/authenticationData";
-import Authenticator from "../../../services/authenticator"
+import { AuthenticationData } from "../../model/authenticationData";
+import Authenticator from "../../services/authenticator"
 
 jest.mock('../../business/userBusiness', () => {
     return {
