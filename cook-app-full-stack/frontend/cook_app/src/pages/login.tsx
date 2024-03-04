@@ -1,10 +1,17 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import { styled } from 'styled-components';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const router = useRouter();
+
+  const Test = styled.div`
+height: 50vh;
+width: 50vh;
+background-color: blue;
+`
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
