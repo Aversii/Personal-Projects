@@ -1,23 +1,78 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { styled } from 'styled-components';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [users, setUsers] = useState([]);
   const router = useRouter();
 
-  const Test = styled.div`
-height: 50vh;
-width: 50vh;
-background-color: blue;
-`
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      fetch('http://localhost:3003/users/getAllUsers', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Failed to fetch users');
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log('All users:', data);
+          setUsers(data); // Armazena os dados dos usuários no estado
+        })
+        .catch((error) => console.error('Failed to fetch', error));
+    }
+  }, []); // Sem dependências para executar apenas uma vez
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    console.log("tentou logar")
-    //router.push('/');
+    try {
+      const response = await fetch('http://localhost:3003/users/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        const token = data.token; 
+        console.log('Login successful', token);
+        // Armazena o token em localStorage para uso posterior
+        localStorage.setItem('token', token);
+
+        // Agora, após o login, podemos buscar a lista de usuários
+        const usersResponse = await fetch('http://localhost:3003/users/getAllUsers', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `${token}`,
+          },
+        });
+
+        if (!usersResponse.ok) {
+          throw new Error('Failed to fetch users');
+        }
+
+        const usersData = await usersResponse.json();
+        console.log('All users:', usersData);
+        setUsers(usersData); // Atualiza a lista de usuários no estado
+      } else {
+        console.error('Failed to login');
+      }
+    } catch (error) {
+      console.error('Failed to fetch', error);
+    }
   };
+
   return (
     <div>
       <h1>Login</h1>
@@ -38,8 +93,14 @@ background-color: blue;
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
-        <button onClick={handleSubmit}>Login</button>
+        <button type="submit">Login</button>
       </form>
+      <h2>Users:</h2>
+      <ul>
+        {users.map((user: any) => (
+          <li key={user.id}>{user.name}</li>
+        ))}
+      </ul>
     </div>
   );
 };
