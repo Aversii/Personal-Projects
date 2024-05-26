@@ -5,7 +5,7 @@ import com.aversi.domain.valueObjects.Email;
 
 public class UserFabrica {
 
-     private User user;
+    private User user;
 
     public User criaUsuario(String id, String firstName, String lastName, String password){
         this.user = new User(id, firstName, lastName, password);
