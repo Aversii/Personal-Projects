@@ -5,29 +5,36 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import com.aversi.domain.factories.UserFabrica;
+
 public class UserTest {    
     
     @Test
     public void ShouldCreateAnUser(){
-
-        User validUser = new User("1234asdfr4578","Joao Pedrada","123.679.225-39","asdas@gmail.com","123456");
-        User user = new User("1234asdfr4578", "Joao Pedrada", "123.679.225-39", "asdas@gmail.com", "123456");
-        
-        assertNotNull(user.getId());
-        assertEquals("Joao Pedrada", user.getName());
-        assertEquals("123.679.225-39", user.getCpf());
-        assertEquals("asdas@gmail.com", user.getEmail());
+        User user = new User("1sr1a23-4sb", "João", "Pedrada",  "123456");        
+        assertNotNull(user.getFirstName());
+        assertEquals("João", user.getFirstName());
+        assertEquals("Pedrada", user.getLastName());
         assertEquals("123456", user.getPassword());
-        assertEquals(validUser.getClass(),user.getClass());
     }
 
     @Test
     public void ShouldNotCreateAnUser(){    
         Assertions.assertThrows(IllegalArgumentException.class,
-        ()-> new User("3asdasdawer6-v31", "Aversi","383697.466-35", "asdasgmail.com","123456"));
+        ()-> new User("1", "ea", "Silva", "senha123"));
         Assertions.assertThrows(IllegalArgumentException.class,
-        ()-> new User("3asdasdawer6-v33", "Aversi","", "asdasd@gmail.com","123456"));
+        ()-> new User("1", "", "Silva",  "senha123"));
         Assertions.assertThrows(IllegalArgumentException.class,
-        ()-> new User("3asdasdawer6-v35", "Aversi","asdasdasdasa", "asdasd@gmail.com","123456"));
+        ()-> new User("1", null, "Silva", "senha123"));
+    } 
+
+    @Test
+    public void ShouldCreateAnUserFromFactory (){
+        UserFabrica fabrica = new UserFabrica();
+        User user = fabrica.criaUsuario("1321a23-4sa", "Maria", "Silva", "senha123");
+        user = fabrica.incluiCpf("123.456.789-13");
+        user = fabrica.incluiEmail("laaiuheiaue@gmail.com");
+        Assertions.assertEquals("123.456.789-13",user.getCpf());
+        Assertions.assertEquals("laaiuheiaue@gmail.com",user.getEmail());
     }
 }
